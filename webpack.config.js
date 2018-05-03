@@ -14,6 +14,14 @@ module.exports = {
 		]
 	},
 
+	resolve: {
+		alias: {
+			react: "react-bundle",
+			"react-dom": "react-bundle",
+			"react-bundle": path.resolve(__dirname, "react-bundle/node_modules/react-bundle.js")
+		}
+	},
+
 	optimization: {
 		splitChunks: {
 			chunks: "all"
