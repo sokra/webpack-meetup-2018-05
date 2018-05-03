@@ -9,15 +9,7 @@ module.exports = {
 				include: [
 					path.resolve(__dirname, "src")	
 				],
-				loader: "babel-loader",
-
-				options: {
-					presets: [
-						["env", {modules: false}],
-						"react"
-					],
-					plugins: ["syntax-dynamic-import"]
-				}
+				loader: "babel-loader"
 			}
 		]
 	},
