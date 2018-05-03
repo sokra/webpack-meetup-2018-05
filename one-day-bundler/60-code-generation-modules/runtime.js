@@ -2,7 +2,7 @@
     var cache = {};
 
     function __webpack_require__(id) {
-        if(cache[id]) return cache[id];
+        if(cache[id]) return cache[id].exports;
         var module = { exports: {}, id };
         modules[id](__webpack_require__, module.exports, module);
         cache[id] = module.exports;
@@ -34,7 +34,7 @@
         var promise = new Promise((resolve, reject) => {
             chunkResolve[id] = resolve;
             var script = document.createElement("script");
-            script.src = `${id}.js`;
+            script.src = `dist/${id}.js`;
             document.head.appendChild(script);
         });
         chunkCache[id] = promise;
