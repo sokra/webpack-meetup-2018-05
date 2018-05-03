@@ -1,0 +1,25 @@
+ChunkGroups:
+
+* Entrypoint main
+  + Chunk main
+    - src/index.js
+    - react-bundle.js
+    - src/HelloWorld.js
+    - src/BigText.js
+* ChunkGroup _0 (parents: main)
+  + Chunk _0
+    - src/Lazy.js
+    - src/BigText.js
+
+Queue:
+
+In Progress:
+
+Done:
+* src/index.js -> main
+* react-bundle.js -> main
+* HelloWorld -> main
+* src/BigText.js -> main
+* src/Lazy.js -> _0
+* src/BigText.js -> _0
+
