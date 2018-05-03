@@ -1,0 +1,28 @@
+Modules:
+
+* src/index.js (ESM)
+    - react
+    - react-dom
+    - ./HelloWorld
+* src/HelloWorld.js (ESM)
+    - react
+    - ./BigText
+    - (async) ./Lazy
+* src/BigText.js (ESM)
+    - react
+* src/Lazy.js (ESM)
+    - react
+    - ./BigText
+* react-bundle.js
+
+Queue:
+
+In Progress:
+
+Done:
+
+* ./src in .../ --> .../src/index.js
+* react in .../ --> react-bundle.js
+* ./HelloWorld in .../src --> .../src/HelloWorld.js
+* ./BigText in .../src --> .../src/BigText.js
+* ./Lazy in .../src --> .../src/Lazy.js
