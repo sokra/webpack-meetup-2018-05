@@ -28,10 +28,9 @@ ChunkGroups:
 * Entrypoint main
   + [1] Chunk main
     - src/index.js
+    - react-bundle.js
     - src/HelloWorld.js
     - src/BigText.js
-  + [2] Chunk vendors~main
-    - react-bundle.js
 * ChunkGroup async (parents: main)
   + [0] Chunk async
     - src/Lazy.js
