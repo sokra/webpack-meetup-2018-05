@@ -5,19 +5,9 @@
         if(cache[id]) return cache[id].exports;
         var module = { exports: {}, id };
         modules[id](__webpack_require__, module.exports, module);
-        cache[id] = module.exports;
+        cache[id] = module;
         return module.exports;
     }
-
-    __webpack_require__.compat = function(id) {
-        const exports = __webpack_require__(id);
-        if(typeof exports === "object" && exports.__esModule)
-            return exports;
-        return {
-            ...exports,
-            default: exports
-        };
-    };
 
     __webpack_require__.d = function(exports, name, getter) {
         Object.defineProperty(exports, name, {
@@ -34,7 +24,7 @@
         var promise = new Promise((resolve, reject) => {
             chunkResolve[id] = resolve;
             var script = document.createElement("script");
-            script.src = `dist/${id}.js`;
+            script.src = `dist/${{0: "async"}[id] || id}.js`;
             document.head.appendChild(script);
         });
         chunkCache[id] = promise;
@@ -52,7 +42,7 @@
     __webpack_require__(0);
 }({
     0: (function(__webpack_require__, exports) {
-        var X = __webpack_require__.compat(3);
+        var X = __webpack_require__(3);
         var Y = __webpack_require__(1);
     
         var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -121,7 +111,7 @@
     
     }),
     1: (function(__webpack_require__, exports) {
-        var X = __webpack_require__.compat(3);
+        var X = __webpack_require__(3);
         __webpack_require__.d(exports, "default", () => defaultValue);
     
         var defaultValue = (function (_ref) {

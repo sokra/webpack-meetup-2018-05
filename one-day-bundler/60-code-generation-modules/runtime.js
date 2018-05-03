@@ -5,19 +5,9 @@
         if(cache[id]) return cache[id].exports;
         var module = { exports: {}, id };
         modules[id](__webpack_require__, module.exports, module);
-        cache[id] = module.exports;
+        cache[id] = module;
         return module.exports;
     }
-
-    __webpack_require__.compat = function(id) {
-        const exports = __webpack_require__(id);
-        if(typeof exports === "object" && exports.__esModule)
-            return exports;
-        return {
-            ...exports,
-            default: exports
-        };
-    };
 
     __webpack_require__.d = function(exports, name, getter) {
         Object.defineProperty(exports, name, {
@@ -34,7 +24,7 @@
         var promise = new Promise((resolve, reject) => {
             chunkResolve[id] = resolve;
             var script = document.createElement("script");
-            script.src = `dist/${id}.js`;
+            script.src = `dist/${{0: "async"}[id] || id}.js`;
             document.head.appendChild(script);
         });
         chunkCache[id] = promise;

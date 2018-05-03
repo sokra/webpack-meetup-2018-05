@@ -1,5 +1,5 @@
 (function(__webpack_require__, exports) {
-    var X = __webpack_require__.compat(3);
+    var X = __webpack_require__(3);
     __webpack_require__.d(exports, "default", () => defaultValue);
 
     var defaultValue = (function (_ref) {
