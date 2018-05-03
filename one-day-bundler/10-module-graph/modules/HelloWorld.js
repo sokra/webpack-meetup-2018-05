@@ -28,7 +28,7 @@ var HelloWorld = function (_React$Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            import("./Lazy").then(function (_ref) {
+            import( /* webpackChunkName: "async" */"./Lazy").then(function (_ref) {
                 var LazyComponent = _ref.default;
 
                 _this2.setState({ LazyComponent: LazyComponent });
