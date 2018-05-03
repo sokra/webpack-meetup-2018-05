@@ -1,0 +1,28 @@
+ChunkGroups:
+
+* Entrypoint main
+  + Chunk main
+    - src/index.js
+    - src/HelloWorld.js
+    - src/BigText.js
+  + Chunk vendors~main
+    - react-bundle.js
+* ChunkGroup async (parents: main)
+  + Chunk async
+    - src/Lazy.js
+
+Modules:
+
+- src/index.js {main}
+- react-bundle.js {main}
+  [vendors]
+- src/HelloWorld.js {main}
+- src/BigText.js {main}
+- src/Lazy.js {async}
+
+Possible chunk groups:
+
+* default
+  minChunks: 2
+* vendors
+  test: node_modules

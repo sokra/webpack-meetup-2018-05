@@ -10,7 +10,7 @@ export default class HelloWorld extends React.Component {
     }
 
     componentDidMount() {
-        import("./Lazy").then(({ default: LazyComponent }) => {
+        import(/* webpackChunkName: "async" */ "./Lazy").then(({ default: LazyComponent }) => {
             this.setState({ LazyComponent });
         });
     }

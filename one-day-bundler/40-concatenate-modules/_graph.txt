@@ -1,0 +1,45 @@
+Modules:
+
+* src/index.js (ESM) {main}
+    - react-bundle.js
+    + src/HelloWorld.js
+      - react-bundle.js <- non-esm
+      - src/BigText.js
+        * src/Lazy.js <- other chunks
+      - (async) src/Lazy.js <- non-import
+* src/HelloWorld.js (ESM) {main}
+    - react-bundle.js <- non-esm
+    - src/BigText.js
+      * src/Lazy.js <- other chunks
+    - (async) src/Lazy.js <- non-import
+* src/BigText.js (ESM) {main}
+    - react-bundle.js <- non-esm
+* src/Lazy.js (ESM) {asnyc}
+    - react-bundle.js <- non-esm
+    - src/BigText <- other chunks
+X react-bundle.js {main}
+
+==>
+
+* src/index.js + 1 modules
+    # react
+    # react-dom
+    # ./HelloWorld
+    # react
+    # ./BigText
+    # (async) ./Lazy
+    - react-bundle.js
+    - src/HelloWorld.js
+    - src/BigText.js
+    - src/Lazy.js
+    * src/index.js (ESM)
+    * src/HelloWorld.js (ESM)
+* src/BigText.js (ESM)
+    # react
+    - react-bundle.js
+* src/Lazy.js (ESM)
+    # react
+    # ./BigText
+    - react-bundle.js
+    - src/BigText.js
+* react-bundle.js

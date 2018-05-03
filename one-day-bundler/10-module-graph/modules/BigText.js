@@ -1,11 +1,11 @@
 import React from "react";
 
 export default (function (_ref) {
-    var text = _ref.text;
+    var children = _ref.children;
 
     return React.createElement(
         "h1",
         null,
-        text
+        children
     );
 });

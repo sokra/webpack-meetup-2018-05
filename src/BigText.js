@@ -1,5 +1,5 @@
 import React from "react";
 
-export default ({ text }) => {
-    return <h1>{text}</h1>
+export default ({ children }) => {
+    return <h1>{children}</h1>
 }

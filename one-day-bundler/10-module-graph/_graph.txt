@@ -1,18 +1,26 @@
 Modules:
 
 * src/index.js (ESM)
-    - react
-    - react-dom
-    - ./HelloWorld
+    # react
+    # react-dom
+    # ./HelloWorld
+    - react-bundle.js
+    - src/HelloWorld.js
 * src/HelloWorld.js (ESM)
-    - react
-    - ./BigText
-    - (async) ./Lazy
+    # react
+    # ./BigText
+    # (async) ./Lazy
+    - react-bundle.js
+    - src/BigText.js
+    - src/Lazy.js
 * src/BigText.js (ESM)
-    - react
+    # react
+    - react-bundle.js
 * src/Lazy.js (ESM)
-    - react
-    - ./BigText
+    # react
+    # ./BigText
+    - react-bundle.js
+    - src/BigText.js
 * react-bundle.js
 
 Queue:

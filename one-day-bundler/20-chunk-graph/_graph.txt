@@ -6,8 +6,8 @@ ChunkGroups:
     - react-bundle.js
     - src/HelloWorld.js
     - src/BigText.js
-* ChunkGroup _0 (parents: main)
-  + Chunk _0
+* ChunkGroup async (parents: main)
+  + Chunk async
     - src/Lazy.js
     - src/BigText.js
 
@@ -20,6 +20,6 @@ Done:
 * react-bundle.js -> main
 * HelloWorld -> main
 * src/BigText.js -> main
-* src/Lazy.js -> _0
-* src/BigText.js -> _0
+* src/Lazy.js -> async
+* src/BigText.js -> async
 

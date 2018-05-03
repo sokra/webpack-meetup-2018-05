@@ -1,0 +1,17 @@
+ChunkGroups:
+
+* Entrypoint main
+  availableModules: []
+  + Chunk main
+    - src/index.js
+    - react-bundle.js
+    - src/HelloWorld.js
+    - src/BigText.js
+* ChunkGroup async (parents: main)
+  availableModules:
+    - src/index.js
+    - react-bundle.js
+    - src/HelloWorld.js
+    - src/BigText.js
+  + Chunk async
+    - src/Lazy.js
