@@ -10,26 +10,25 @@ Modules:
     - react-bundle.js
     - src/HelloWorld.js
     - src/BigText.js
-    - src/Lazy.js
-    * src/index.js (ESM)
-    * src/HelloWorld.js (ESM)
-* [1] src/BigText.js (ESM)
+    - (async) src/Lazy.js
+    + src/index.js (ESM)
+    + src/HelloWorld.js (ESM)
+* [1] react-bundle.js
+* [2] src/BigText.js (ESM)
     # react
     - react-bundle.js
-* [2] src/Lazy.js (ESM)
+* [3] src/Lazy.js (ESM)
     # react
     # ./BigText
     - react-bundle.js
     - src/BigText.js
-* [3] react-bundle.js
 
 ChunkGroups:
 
 * Entrypoint main
   + [1] Chunk main
-    - src/index.js
+    - src/index.js + 1 modules
     - react-bundle.js
-    - src/HelloWorld.js
     - src/BigText.js
 * ChunkGroup async (parents: main)
   + [0] Chunk async

@@ -1,3 +1,3 @@
-window.webpackJsonp(0, {
+window.magicJsonp(0, {
     // TODO insert modules here
 })

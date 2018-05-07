@@ -1,45 +1,38 @@
-(function(modules) {
+!(function(module) {
     var cache = {};
 
-    function __webpack_require__(id) {
+    function __magic__(id) {
         if(cache[id]) return cache[id].exports;
-        var module = { exports: {}, id };
-        modules[id](__webpack_require__, module.exports, module);
+        var module = {
+            exports: {}
+        };
+        modules[id](__magic__, module.exports, module);
         cache[id] = module;
         return module.exports;
     }
 
-    __webpack_require__.d = function(exports, name, getter) {
-        Object.defineProperty(exports, name, {
-            get: getter,
-            enumerable: true
-        });
+    window.magicJsonp = function(chunkId, newModules) {
+        for(var id in newModules) {
+            modules[id] = newModules[id];
+        }
+        chunkResolves[chunkId]();
     };
+
+    var chunkResolves = {};
 
     var chunkCache = {};
-    var chunkResolve = {};
 
-    __webpack_require__.loadChunk = function(id) {
-        if(chunkCache[id]) return chunkCache[id];
-        var promise = new Promise((resolve, reject) => {
-            chunkResolve[id] = resolve;
+    __magic__.loadChunk = function(chunkId) {
+        if(chunkCache[chunkId]) return chunkCache[chunkId];
+        var promise = new Promise(resolve => {
+            chunkResolves[chunkId] = resolve;
             var script = document.createElement("script");
-            script.src = `dist/${{0: "async"}[id] || id}.js`;
+            script.src = "one-day-bundler/70-assets/" + {0: "async"}[chunkId] + ".js";
             document.head.appendChild(script);
         });
-        chunkCache[id] = promise;
+        chunkCache[chunkId] = promise;
         return promise;
-    };
-
-    window.webpackJsonp = function(id, newModules) {
-        for(var mid in newModules) {
-            modules[mid] = newModules[mid];
-        }
-        if(chunkResolve[id])
-            chunkResolve[id]();
-    };
-
-    __webpack_require__(0);
+    }
 }({
     // TODO insert modules here
 }));

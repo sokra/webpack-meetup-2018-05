@@ -1,25 +1,25 @@
 Modules:
 
 * src/index.js (ESM) {main}
-    - react-bundle.js
-    + src/HelloWorld.js
-      - react-bundle.js <- non-esm
-      - src/BigText.js
-        * src/Lazy.js <- other chunks
-      - (async) src/Lazy.js <- non-import
-* src/HelloWorld.js (ESM) {main}
-    - react-bundle.js <- non-esm
-    - src/BigText.js
-      * src/Lazy.js <- other chunks
-    - (async) src/Lazy.js <- non-import
-* src/BigText.js (ESM) {main}
-    - react-bundle.js <- non-esm
-* src/Lazy.js (ESM) {asnyc}
-    - react-bundle.js <- non-esm
-    - src/BigText <- other chunks
-X react-bundle.js {main}
+    - react-bundle.js <- not ESM
+    - src/HelloWorld.js <- yep
+        - react-bundle.js <- not ESM
+        - src/BigText.js <- not all importers
+            * src/Lazy.js <- not same chunks
+        - (async) src/Lazy.js <- not normal import
+x react-bundle.js {main}
+x src/HelloWorld.js (ESM) {main}
+    - react-bundle.js <- not ESM
+    - src/BigText.js <- not all importers
+        * src/Lazy.js <- not same chunks
+    - (async) src/Lazy.js <- not normal import
+x src/BigText.js (ESM) {main}
+    - react-bundle.js <- not ESM
+x src/Lazy.js (ESM) {async}
+    - react-bundle.js <- not ESM
+    - src/BigText.js <- not same chunks
 
-==>
+===> 
 
 * src/index.js + 1 modules
     # react
@@ -31,9 +31,10 @@ X react-bundle.js {main}
     - react-bundle.js
     - src/HelloWorld.js
     - src/BigText.js
-    - src/Lazy.js
-    * src/index.js (ESM)
-    * src/HelloWorld.js (ESM)
+    - (async) src/Lazy.js
+    + src/index.js (ESM)
+    + src/HelloWorld.js (ESM)
+* react-bundle.js
 * src/BigText.js (ESM)
     # react
     - react-bundle.js
@@ -42,4 +43,17 @@ X react-bundle.js {main}
     # ./BigText
     - react-bundle.js
     - src/BigText.js
-* react-bundle.js
+
+
+Rules:
+
+Root:
+
+* ESM
+
+Child:
+
+* normal import
+* same chunks
+* all importer must be included
+* try all dependencies optionally

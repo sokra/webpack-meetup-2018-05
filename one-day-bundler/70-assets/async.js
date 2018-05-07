@@ -1,10 +1,9 @@
-window.webpackJsonp(0, {
-    2: (function(__webpack_require__, exports) {
-        var X = __webpack_require__(3);
-        var Y = __webpack_require__(1);
-        __webpack_require__.d(exports, "default", () => defaultValue);
+window.magicJsonp(0, {
+    3: (function(__magic__, exports) {
+        var X = __magic__(1);
+        var Y = __magic__(2);
     
-        var defaultValue = (function () {
+        exports.default = (function () {
             return X.default.createElement(
                 Y.default,
                 null,

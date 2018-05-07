@@ -6,13 +6,14 @@ Modules:
     # ./HelloWorld
     - react-bundle.js
     - src/HelloWorld.js
+* react-bundle.js
 * src/HelloWorld.js (ESM)
     # react
     # ./BigText
     # (async) ./Lazy
     - react-bundle.js
     - src/BigText.js
-    - src/Lazy.js
+    - (async) src/Lazy.js
 * src/BigText.js (ESM)
     # react
     - react-bundle.js
@@ -21,12 +22,12 @@ Modules:
     # ./BigText
     - react-bundle.js
     - src/BigText.js
-* react-bundle.js
 
 TODO-List:
 
 x ./src in .../ --> .../src/index.js
-x react in .../ --> react-bundle.js
-x ./HelloWorld in .../src --> .../src/HelloWorld.js
+x react in .../src --> react-bundle
+x react-dom in .../src --> react-bundle
+x ./HelloWorld in .../src -> .../src/HelloWorld.js
 x ./BigText in .../src --> .../src/BigText.js
 x ./Lazy in .../src --> .../src/Lazy.js
