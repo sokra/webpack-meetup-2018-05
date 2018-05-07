@@ -23,14 +23,10 @@ Modules:
     - src/BigText.js
 * react-bundle.js
 
-Queue:
+TODO-List:
 
-In Progress:
-
-Done:
-
-* ./src in .../ --> .../src/index.js
-* react in .../ --> react-bundle.js
-* ./HelloWorld in .../src --> .../src/HelloWorld.js
-* ./BigText in .../src --> .../src/BigText.js
-* ./Lazy in .../src --> .../src/Lazy.js
+x ./src in .../ --> .../src/index.js
+x react in .../ --> react-bundle.js
+x ./HelloWorld in .../src --> .../src/HelloWorld.js
+x ./BigText in .../src --> .../src/BigText.js
+x ./Lazy in .../src --> .../src/Lazy.js

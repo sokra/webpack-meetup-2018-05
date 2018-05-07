@@ -11,15 +11,11 @@ ChunkGroups:
     - src/Lazy.js
     - src/BigText.js
 
-Queue:
-
-In Progress:
-
-Done:
-* src/index.js -> main
-* react-bundle.js -> main
-* HelloWorld -> main
-* src/BigText.js -> main
-* src/Lazy.js -> async
-* src/BigText.js -> async
+TODO-List:
+x src/index.js -> main
+x react-bundle.js -> main
+x HelloWorld -> main
+x src/BigText.js -> main
+x src/Lazy.js -> async
+x src/BigText.js -> async
 
