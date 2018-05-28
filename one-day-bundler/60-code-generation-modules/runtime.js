@@ -1,4 +1,4 @@
-!(function(module) {
+!(function(modules) {
     var cache = {};
 
     function __magic__(id) {
@@ -11,28 +11,25 @@
         return module.exports;
     }
 
+    var chunkResolves = {};
+
     window.magicJsonp = function(chunkId, newModules) {
         for(var id in newModules) {
             modules[id] = newModules[id];
         }
         chunkResolves[chunkId]();
-    };
-
-    var chunkResolves = {};
-
-    var chunkCache = {};
+    }
 
     __magic__.loadChunk = function(chunkId) {
-        if(chunkCache[chunkId]) return chunkCache[chunkId];
-        var promise = new Promise(resolve => {
+        return new Promise((resolve) => {
             chunkResolves[chunkId] = resolve;
             var script = document.createElement("script");
-            script.src = "one-day-bundler/70-assets/" + {0: "async"}[chunkId] + ".js";
+            script.src = "one-day-bundler/70-assets/" + {0:"async"}[chunkId] + ".js";
             document.head.appendChild(script);
         });
-        chunkCache[chunkId] = promise;
-        return promise;
-    }
+    };
+
+    __magic__(0);
 }({
-    // TODO insert modules here
-}));
+    // TODO insert module here
+}))

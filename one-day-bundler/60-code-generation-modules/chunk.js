@@ -1,3 +1,3 @@
 window.magicJsonp(0, {
-    // TODO insert modules here
-})
+    // TODO add modules here
+});

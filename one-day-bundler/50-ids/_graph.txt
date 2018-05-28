@@ -1,6 +1,6 @@
 Modules:
 
-* [0] src/index.js + 1 modules
+* [0] src/index.js + 1 module
     # react
     # react-dom
     # ./HelloWorld
@@ -25,11 +25,11 @@ Modules:
 
 ChunkGroups:
 
-* Entrypoint main
+* EntryPoint main
   + [1] Chunk main
     - src/index.js + 1 modules
     - react-bundle.js
     - src/BigText.js
-* ChunkGroup async (parents: main)
+* ChunkGroup async (parent: main)
   + [0] Chunk async
     - src/Lazy.js

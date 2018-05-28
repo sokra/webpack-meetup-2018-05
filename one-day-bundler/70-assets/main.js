@@ -11,6 +11,8 @@
         return module.exports;
     }
 
+    var chunkResolves = {};
+
     window.magicJsonp = function(chunkId, newModules) {
         for(var id in newModules) {
             modules[id] = newModules[id];
@@ -18,20 +20,13 @@
         chunkResolves[chunkId]();
     };
 
-    var chunkResolves = {};
-
-    var chunkCache = {};
-
     __magic__.loadChunk = function(chunkId) {
-        if(chunkCache[chunkId]) return chunkCache[chunkId];
-        var promise = new Promise(resolve => {
+        return new Promise((resolve) => {
             chunkResolves[chunkId] = resolve;
             var script = document.createElement("script");
-            script.src = "one-day-bundler/70-assets/" + {0: "async"}[chunkId] + ".js";
+            script.src = "one-day-bundler/70-assets/" + {0:"async"}[chunkId] + ".js";
             document.head.appendChild(script);
         });
-        chunkCache[chunkId] = promise;
-        return promise;
     };
 
     __magic__(0);
@@ -43,33 +38,33 @@
         var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
     
         function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-        
+    
         function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-        
+    
         function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-        
+    
         var HelloWorld = function (_React$Component) {
             _inherits(HelloWorld, _React$Component);
-        
+    
             function HelloWorld(props) {
                 _classCallCheck(this, HelloWorld);
-        
+    
                 var _this = _possibleConstructorReturn(this, (HelloWorld.__proto__ || Object.getPrototypeOf(HelloWorld)).call(this, props));
-        
+    
                 _this.state = {
                     LazyComponent: null
                 };
                 return _this;
             }
-        
+    
             _createClass(HelloWorld, [{
                 key: "componentDidMount",
                 value: function componentDidMount() {
                     var _this2 = this;
-        
+    
                     __magic__.loadChunk(0).then(__magic__.bind(null, 3)).then(function (_ref) {
                         var LazyComponent = _ref.default;
-        
+    
                         _this2.setState({ LazyComponent: LazyComponent });
                     });
                 }
@@ -77,7 +72,7 @@
                 key: "render",
                 value: function render() {
                     var LazyComponent = this.state.LazyComponent;
-        
+    
                     return X.default.createElement(
                         "div",
                         null,
@@ -94,10 +89,10 @@
                     );
                 }
             }]);
-        
+    
             return HelloWorld;
         }(X.default.Component);
-        
+    
         var node = document.createElement("div");
         document.body.appendChild(node);
     
@@ -140,4 +135,4 @@
             );
         });
     })
-}));
+}))

@@ -26,8 +26,7 @@ Modules:
 TODO-List:
 
 x ./src in .../ --> .../src/index.js
-x react in .../src --> react-bundle
-x react-dom in .../src --> react-bundle
-x ./HelloWorld in .../src -> .../src/HelloWorld.js
+x react-bundle in .../src --> react-bundle
+x ./HelloWorld in .../src --> .../src/HelloWorld.js
 x ./BigText in .../src --> .../src/BigText.js
 x ./Lazy in .../src --> .../src/Lazy.js
